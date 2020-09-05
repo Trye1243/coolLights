@@ -10,7 +10,6 @@ pixels.auto_write = False
 
 
 
-
 def vibeLighting(pixels):
   i=0
   while True:
@@ -25,11 +24,15 @@ def vibeLighting(pixels):
           pixels[x] = (int(mod*120), 0, max(2,int(mod* 10)))
       pixels.show()
 
-
+def fill(pixels, brightness, color):
+  pixels.brightness = brightness
+  pixels.fill(color)
+  pixels.show()
 
 
 if __name__ == "__main__":
     r = sys.argv[1]
     if r == "vibe":
       vibeLighting(pixels)
-    
+    if r == "dullWhite":
+      fill(pixels, 0.1, (255, 255, 255))
