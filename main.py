@@ -32,7 +32,10 @@ def fill(pixels, brightness, color):
 
 if __name__ == "__main__":
     r = sys.argv[1]
+    r1 = 0
+    if len(sys.argv) > 2:
+      r1 = sys.rv[2]
     if r == "vibe":
       vibeLighting(pixels)
     if r == "dullWhite":
-      fill(pixels, 0.1, (255, 255, 255))
+      fill(pixels, r1, (255, 255, 255))
