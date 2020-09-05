@@ -8,10 +8,7 @@ import sys
 pixels = neopixel.NeoPixel(board.D18, 900)
 pixels.auto_write = False
 
-if __name__ == "__main__":
-    print(f"Arguments count: {len(sys.argv)}")
-    for i, arg in enumerate(sys.argv):
-        print(f"Argument {i:>6}: {arg}")
+
 
 
 def vibeLighting(pixels):
@@ -28,5 +25,11 @@ def vibeLighting(pixels):
           pixels[x] = (int(mod*120), 0, max(2,int(mod* 10)))
       pixels.show()
 
-vibeLighting(pixels)
 
+
+
+if __name__ == "__main__":
+    r = sys.argv[1]
+    if r == "vibe":
+      vibeLighting(pixels)
+    
