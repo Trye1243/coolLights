@@ -4,8 +4,8 @@ import time
 import math
 import sys
 
-
-pixels = neopixel.NeoPixel(board.D18, 900)
+size = 900
+pixels = neopixel.NeoPixel(board.D18, size)
 pixels.auto_write = False
 
 
@@ -29,6 +29,27 @@ def fill(pixels, brightness, color):
   pixels.fill(color)
   pixels.show()
 
+def bomb(pixels, brightness, color):
+  pixels.brightness = brightness
+  pixels.fill(pixels, 1, (20, 105, 30))
+  pixels.show()
+  for x in range(size-1,-1,-1):
+    pixels[x] = (255, random.randint(0,50), random.randint(0,25))
+    pixels[x+1] = (0, 0, 0)
+    pixels.show()
+  for x in range(0, 5) :
+    fill(pixels, 1, pixels, 1, (20, 105, 30))
+    pixels.show()
+  
+
+
+
+def fillFromOrigin(pixels, brightness, color, origin, sleep):
+    left = origin
+    right = origin
+    
+    while (left >= 0):
+      
 
 if __name__ == "__main__":
     r = sys.argv[1]
