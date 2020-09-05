@@ -31,7 +31,7 @@ def fill(pixels, brightness, color):
   pixels.show()
 
 def bomb(pixels):
-  fill(pixels, 1, (20, 3, 0))
+  fill(pixels, 1, (14, 2, 0))
   for x in range(size-2,-1,-1):
     pixels[x] = (255, random.randint(0,50), random.randint(0,5))
     pixels[x+1] = (0, 0, 0)
