@@ -31,9 +31,7 @@ def fill(pixels, brightness, color):
   pixels.show()
 
 def bomb(pixels):
-  pixels.brightness = 1
-  pixels.fill(pixels, 1, (20, 105, 30))
-  pixels.show()
+  fill(pixels, 1, (20, 105, 30))
   for x in range(size-1,-1,-1):
     pixels[x] = (255, random.randint(0,50), random.randint(0,25))
     pixels[x+1] = (0, 0, 0)
@@ -50,7 +48,14 @@ def fillFromOrigin(pixels, brightness, color, origin, sleep):
     right = origin
     
     while (left >= 0 or right < size):
-      pixels[left] = 0
+      pixels[left] = color
+      pixels[right] = color
+      if left > 0:
+        left = left - 1
+      if right < size - 1:
+        right = right + 1
+      time.sleep(sleep)
+
       
 
 if   __name__ == "__main__":
