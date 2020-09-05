@@ -29,7 +29,7 @@ def fill(pixels, brightness, color):
   pixels.fill(color)
   pixels.show()
 
-def bomb(pixels, brightness, color):
+def bomb(pixels):
   pixels.brightness = brightness
   pixels.fill(pixels, 1, (20, 105, 30))
   pixels.show()
@@ -38,7 +38,7 @@ def bomb(pixels, brightness, color):
     pixels[x+1] = (0, 0, 0)
     pixels.show()
   for x in range(0, 5) :
-    fill(pixels, 1, pixels, 1, (20, 105, 30))
+    fill(pixels, 1, (20, 105, 30))
     pixels.show()
   
 
@@ -48,15 +48,18 @@ def fillFromOrigin(pixels, brightness, color, origin, sleep):
     left = origin
     right = origin
     
-    while (left >= 0):
+    while (left >= 0 or right < size):
+      i = 0
       
 
-if __name__ == "__main__":
-    r = sys.argv[1]
-    r1 = 0
-    if len(sys.argv) > 2:
-      r1 = float(sys.argv[2])
-    if r == "vibe":
+if   __name__ == "__main__":
+  r = sys.argv[1]
+  r1 = 0
+  if len(sys.argv) > 2:
+    r1 = float(sys.argv[2])
+  if   r == "vibe":
       vibeLighting(pixels)
-    if r == "dullWhite":
-      fill(pixels, r1, (255, 255, 255))
+  if   r == "dullWhite":
+    fill(pixels, r1, (255, 255, 255))
+  if r=="bomb":
+    bomb(pixels)
