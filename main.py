@@ -70,4 +70,4 @@ if   __name__ == "__main__":
   if r=="bomb":
     bomb(pixels)
   if r=="fill300":
-    fillFromOrigin(pixels, r1, (255, 0, 0), 300, 1)
+    fillFromOrigin(pixels, r1, (255, 0, 0), 300, 1000)
