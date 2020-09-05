@@ -3,6 +3,7 @@ import neopixel
 import time
 import math
 import sys
+import random
 
 size = 900
 pixels = neopixel.NeoPixel(board.D18, size)
@@ -30,7 +31,7 @@ def fill(pixels, brightness, color):
   pixels.show()
 
 def bomb(pixels):
-  pixels.brightness = brightness
+  pixels.brightness = 1
   pixels.fill(pixels, 1, (20, 105, 30))
   pixels.show()
   for x in range(size-1,-1,-1):
@@ -49,7 +50,7 @@ def fillFromOrigin(pixels, brightness, color, origin, sleep):
     right = origin
     
     while (left >= 0 or right < size):
-      i = 0
+      pixels[left] = 0
       
 
 if   __name__ == "__main__":
