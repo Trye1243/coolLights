@@ -34,7 +34,7 @@ if __name__ == "__main__":
     r = sys.argv[1]
     r1 = 0
     if len(sys.argv) > 2:
-      r1 = sys.rv[2]
+      r1 = sys.argv[2]
     if r == "vibe":
       vibeLighting(pixels)
     if r == "dullWhite":
