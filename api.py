@@ -107,4 +107,4 @@ def post_lights():
     return json.dumps({"success": True}), 201
 
 if __name__ == '__main__':
-    api.run()
+    api.run("130.215.126.81")
