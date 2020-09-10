@@ -84,7 +84,7 @@ CORS(api)
 
 def lights(name):
     if (name=="off"):
-        fill(pixels, (0, 0, 0), 0)
+        fill(pixels, 0, (0, 0, 0))
     elif (name=="vibe"):
         vibeLighting(pixels)
     elif (name=="bomb"):
