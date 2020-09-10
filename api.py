@@ -6,6 +6,7 @@ import time
 import math
 import sys
 import random
+from flask_cors import CORS
 
 kill = False
 size = 900
@@ -78,7 +79,7 @@ def fillFromOrigin(pixels, brightness, color, origin, sleep):
 companies = [{"id": 1, "name": "Company One"}, {"id": 2, "name": "Company Two"}]
 
 api = Flask(__name__)
-
+CORS(api)
 
 
 def lights(name):
